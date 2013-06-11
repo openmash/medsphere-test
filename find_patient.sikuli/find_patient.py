@@ -8,4 +8,4 @@ type(Key.DOWN)
 
 type(Key.ENTER)
 
-find("1370981821621.png")
+find(Pattern("1370981821621.png").similar(0.79))

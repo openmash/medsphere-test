@@ -5,5 +5,5 @@ type(Key.ENTER)
 
 find("1370983419933.png")
 
-click("1370983455361.png")
+click("ok.png")
 

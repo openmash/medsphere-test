@@ -67,17 +67,20 @@
    </head>
 <body>
 <div class="info">
-<h2>make_appointment.sikuli\make_appointment.sikuli</h2> <a href="make_appointment.sikuli\make_appointment.zip">(Download this script)</a>
+<h2>manage_walkin_patient.sikuli\manage_walkin_patientsikuli.sikuli</h2> <a href="manage_walkin_patient.sikuli\manage_walkin_patientsikuli.zip">(Download this script)</a>
 </div>
 <pre class="sikuli-code">
-<span class="skw">rightClick</span>(Pattern(<img src="1370982601051.png" />).similar(<span class="dig">0.94</span>).targetOffset(<span class="dig">0</span>,<span class="dig">6</span>))
+<span class="skw">doubleClick</span>(Pattern(<img src="1370537456805-1.png" />).targetOffset(<span class="dig">26</span>,<span class="dig">0</span>))
+
+<span class="skw">type</span>(Pattern(<img src="1370537456805-2.png" />).targetOffset(<span class="dig">20</span>,<span class="dig">0</span>), <span class="str">'s'</span>)
+
+<span class="skw">sleep</span>(<span class="dig">5</span>) <span class="cmt">#let the search find it</span>
 
 <span class="skw">type</span>(Key.DOWN)
+
 <span class="skw">type</span>(Key.ENTER)
 
-<span class="skw">find</span>(<img src="1370983419933.png" />)
-
-<span class="skw">click</span>(<img src="ok.png" />)
+<span class="skw">find</span>(<img src="1370981821621-1.png" />)
 </pre>
 </body>
 </html>

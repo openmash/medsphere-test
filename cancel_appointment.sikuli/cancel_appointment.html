@@ -67,17 +67,29 @@
    </head>
 <body>
 <div class="info">
-<h2>make_appointment.sikuli\make_appointment.sikuli</h2> <a href="make_appointment.sikuli\make_appointment.zip">(Download this script)</a>
+<h2>cancel_appointment.sikuli\cancel_appointment.sikuli</h2> <a href="cancel_appointment.sikuli\cancel_appointment.zip">(Download this script)</a>
 </div>
 <pre class="sikuli-code">
-<span class="skw">rightClick</span>(Pattern(<img src="1370982601051.png" />).similar(<span class="dig">0.94</span>).targetOffset(<span class="dig">0</span>,<span class="dig">6</span>))
+d = <span class="skw">find</span>(Pattern(<img src="Thursday-1.png" />).similar(<span class="dig">0.91</span>))
+<span class="cmt">#print d.getX()
+</span>st = <span class="skw">find</span>(Pattern(<img src="9am.png" />).similar(<span class="dig">0.75</span>))
 
-<span class="skw">type</span>(Key.DOWN)
+et = <span class="skw">find</span>(Pattern(<img src="1pm.png" />).similar(<span class="dig">0.77</span>))
+
+r = Region(d.getX() -<span class="dig">20</span>, st.getY() - <span class="dig">10</span>, <span class="dig">200</span>, <span class="dig">280</span>)
+
+l = r.<span class="skw">find</span>(Pattern(<img src="appointment_corner.png" />).similar(<span class="dig">0.79</span>))
+
+<span class="skw">rightClick</span>(Location(l.getX()-<span class="dig">50</span>, l.getY()+<span class="dig">15</span>))
+
+<span class="kw">for</span> i <span class="kw">in</span> range(<span class="dig">3</span>):
+    <span class="skw">type</span>(Key.DOWN)
+
 <span class="skw">type</span>(Key.ENTER)
 
-<span class="skw">find</span>(<img src="1370983419933.png" />)
-
 <span class="skw">click</span>(<img src="ok.png" />)
+
+r.<span class="skw">find</span>(Pattern(<img src="cancelled_corner.png" />).similar(<span class="dig">0.80</span>))
 </pre>
 </body>
 </html>
