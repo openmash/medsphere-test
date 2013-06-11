@@ -1,0 +1,1 @@
+App.close('Clinical Scheduling')
