@@ -82,30 +82,35 @@
 
 <span class="skw">wait</span>(<img src="1370485257041.png" />)
 
-d = <span class="skw">find</span>(Pattern(<img src="thursday.png" />).similar(<span class="dig">0.48</span>))
-t = <span class="skw">find</span>(Pattern(<img src="9am.png" />).similar(<span class="dig">0.75</span>))
 
-<span class="skw">click</span>(Location(d.getX(), t.getY()))
+days = [<img src="Monday.png" />, Pattern(<img src="Tuesday.png" />).similar(<span class="dig">0.82</span>), <img src="Wednesday.png" />, Pattern(<img src="thursday.png" />).similar(<span class="dig">0.48</span>), <img src="Friday.png" />, <img src="Saturday.png" />, Pattern(<img src="Sunday.png" />).similar(<span class="dig">0.74</span>) ]
 
-t = <span class="skw">find</span>(Pattern(<img src="1pm.png" />).similar(<span class="dig">0.77</span>))
-l = Location(d.getX(), t.getY())
+<span class="kw">for</span> day <span class="kw">in</span> days:
 
-<span class="skw">click</span>(l, KEY_SHIFT)
+    d = <span class="skw">find</span>(day)
+    t = <span class="skw">find</span>(Pattern(<img src="9am.png" />).similar(<span class="dig">0.75</span>))
 
-<span class="skw">rightClick</span>(l)
+    <span class="skw">click</span>(Location(d.getX(), t.getY()))
 
-<span class="skw">click</span>(Pattern(<img src="add_new_access_block.png" />).similar(<span class="dig">0.50</span>))
+    t = <span class="skw">find</span>(Pattern(<img src="1pm.png" />).similar(<span class="dig">0.77</span>))
+    l = Location(d.getX(), t.getY())
 
-<span class="skw">wait</span>(<img src="1370485571939.png" />, <span class="dig">5</span>)
+    <span class="skw">click</span>(l, KEY_SHIFT)
 
-<span class="kw">for</span> x <span class="kw">in</span> range(<span class="dig">4</span>):
-    <span class="skw">click</span>(Pattern(<img src="1370389005138.png" />).targetOffset(<span class="dig">1</span>,-<span class="dig">7</span>))
+    <span class="skw">rightClick</span>(l)
 
+    <span class="skw">click</span>(Pattern(<img src="add_new_access_block.png" />).similar(<span class="dig">0.50</span>))
 
+    <span class="skw">wait</span>(<img src="1370485571939.png" />, <span class="dig">5</span>)
 
-<span class="skw">click</span>(Pattern(<img src="1370389069947.png" />).similar(<span class="dig">0.49</span>))
+    <span class="kw">for</span> x <span class="kw">in</span> range(<span class="dig">4</span>):
+        <span class="skw">click</span>(Pattern(<img src="1370389005138.png" />).targetOffset(<span class="dig">1</span>,-<span class="dig">7</span>))
 
-<span class="skw">find</span>(<img src="1370980734032.png" />)
+    <span class="skw">click</span>(Pattern(<img src="1370389069947.png" />).similar(<span class="dig">0.49</span>))
+
+x = findAll(<img src="1370980734032.png" />)
+
+<span class="kw">print</span> x
 </pre>
 </body>
 </html>
