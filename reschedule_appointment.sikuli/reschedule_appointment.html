@@ -70,13 +70,25 @@
 <h2>reschedule_appointment.sikuli\reschedule_appointment.sikuli</h2> <a href="reschedule_appointment.sikuli\reschedule_appointment.zip">(Download this script)</a>
 </div>
 <pre class="sikuli-code">
-d = <span class="skw">find</span>(Pattern(<img src="Thursday-1.png" />).similar(<span class="dig">0.91</span>))
+days = {<span class="str">"monday"</span>:<img src="Monday.png" />,
+        <span class="str">"tuesday"</span>: Pattern(<img src="Tuesday.png" />).similar(<span class="dig">0.82</span>),
+        <span class="str">"wednesday"</span>: <img src="Wednesday.png" />,
+        <span class="str">"thursday"</span>:Pattern(<img src="thursday.png" />).similar(<span class="dig">0.57</span>),
+        <span class="str">"friday"</span>:<img src="Friday.png" />,
+        <span class="str">"saturday"</span>:<img src="Saturday.png" />,
+        <span class="str">"sunday"</span>:Pattern(<img src="Sunday.png" />).similar(<span class="dig">0.74</span>) }
+
+<span class="cmt">#build script will change this
+</span>day = days[<span class="str">"saturday"</span>]
+rday = days[<span class="str">"sunday"</span>]
+
+d = <span class="skw">find</span>(day)
 <span class="cmt">#print d.getX()
 </span>st = <span class="skw">find</span>(Pattern(<img src="9am.png" />).similar(<span class="dig">0.75</span>))
 
 et = <span class="skw">find</span>(Pattern(<img src="1pm.png" />).similar(<span class="dig">0.77</span>))
 
-r = Region(d.getX() -<span class="dig">20</span>, st.getY() - <span class="dig">10</span>, <span class="dig">200</span>, <span class="dig">280</span>)
+r = Region(d.getX() -<span class="dig">20</span>, st.getY() - <span class="dig">10</span>, <span class="dig">200</span>, <span class="dig">30</span>)
 
 l = r.<span class="skw">find</span>(Pattern(<img src="appointment_corner.png" />).similar(<span class="dig">0.79</span>))
 
@@ -87,7 +99,28 @@ l = r.<span class="skw">find</span>(Pattern(<img src="appointment_corner.png" />
 
 <span class="skw">type</span>(Key.ENTER)
 
+<span class="skw">wait</span>(<img src="AutoRebook.png" />, <span class="dig">10</span>)
+
+<span class="skw">click</span>(Pattern(<img src="AutoRebookChk.png" />).targetOffset(-<span class="dig">35</span>,<span class="dig">1</span>))
+
+<span class="kw">for</span> i <span class="kw">in</span> range(<span class="dig">6</span>):
+    <span class="skw">click</span>(Pattern(<img src="Start.png" />).targetOffset(-<span class="dig">24</span>,<span class="dig">2</span>))
+
 <span class="skw">click</span>(<img src="ok.png" />)
+
+<span class="skw">wait</span>(<img src="Anewannninfm.png" />, <span class="dig">10</span>)
+
+<span class="skw">click</span>(<img src="OK-1.png" />)
+
+d = <span class="skw">find</span>(rday)
+
+st = <span class="skw">find</span>(Pattern(<img src="9am.png" />).similar(<span class="dig">0.75</span>))
+
+et = <span class="skw">find</span>(Pattern(<img src="1pm.png" />).similar(<span class="dig">0.77</span>))
+
+r = Region(d.getX() -<span class="dig">20</span>, st.getY() - <span class="dig">10</span>, <span class="dig">200</span>, <span class="dig">30</span>)
+
+l = r.<span class="skw">find</span>(Pattern(<img src="appointment_corner.png" />).similar(<span class="dig">0.79</span>))
 </pre>
 </body>
 </html>
