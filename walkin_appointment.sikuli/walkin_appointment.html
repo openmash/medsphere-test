@@ -1,0 +1,101 @@
+
+<html>
+   <head>
+      <style type="text/css">
+         .sikuli-code {
+            font-size: 20px;
+            font-family: "Osaka-mono", Monospace;
+            line-height: 1.5em;
+            display:table-cell;
+            white-space: pre-wrap;       /* css-3 */
+            white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+            white-space: -pre-wrap;      /* Opera 4-6 */
+            white-space: -o-pre-wrap;    /* Opera 7 */
+            word-wrap: break-word;       /* Internet Explorer 5.5+ */
+            width: 99%;   /* remove horizontal scroll-bar when viewing in IE7 */
+         }
+         .sikuli-code img {
+            vertical-align: middle;
+            margin: 2px;
+            border: 1px solid #ccc;
+            padding: 2px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-box-shadow: 1px 1px 1px gray;
+            -webkit-box-shadow: 1px 1px 2px gray;
+         }
+         .kw {
+            color: blue;
+         }
+         .skw {
+            color: rgb(63, 127, 127);
+         }
+
+         .str {
+            color: rgb(128, 0, 0);
+         }
+
+         .dig {
+            color: rgb(128, 64, 0);
+         }
+
+         .cmt {
+            color: rgb(200, 0, 200);
+         }
+
+         h2 {
+            display: inline;
+            font-weight: normal;
+         }
+
+         .info {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            display: none;
+         }
+
+         a {
+            color: #9D2900;
+         }
+
+         body {
+            font-family: "Trebuchet MS", Arial, Sans-Serif;
+         }
+
+      </style>
+   </head>
+<body>
+<div class="info">
+<h2>walkin_appointment.sikuli\walkin_appointment.sikuli</h2> <a href="walkin_appointment.sikuli\walkin_appointment.zip">(Download this script)</a>
+</div>
+<pre class="sikuli-code">
+days = {<span class="str">"monday"</span>:<img src="Monday.png" />,
+        <span class="str">"tuesday"</span>: Pattern(<img src="Tuesday.png" />).similar(<span class="dig">0.83</span>),
+        <span class="str">"wednesday"</span>:<img src="Wednesday.png" />,
+        <span class="str">"thursday"</span>:Pattern(<img src="thursday.png" />).similar(<span class="dig">0.48</span>),
+        <span class="str">"friday"</span>:<img src="Friday.png" />,
+        <span class="str">"saturday"</span>:<img src="Saturday.png" />,
+        <span class="str">"sunday"</span>:Pattern(<img src="Sunday.png" />).similar(<span class="dig">0.74</span>) }
+
+day = days[<span class="str">"wednesday"</span>]
+
+d = <span class="skw">find</span>(day)
+
+<span class="cmt">#print d.getX()
+</span>st = <span class="skw">find</span>(Pattern(<img src="10AM.png" />).similar(<span class="dig">0.83</span>))
+
+l = Location(d.getX() + <span class="dig">5</span>, st.getY() + <span class="dig">5</span>)
+<span class="skw">rightClick</span>(l)
+<span class="skw">sleep</span>(<span class="dig">1</span>)
+<span class="skw">type</span>(Key.DOWN)
+<span class="skw">type</span>(Key.DOWN)
+<span class="skw">type</span>(Key.ENTER)
+
+<span class="kw">if</span> exists(<img src="question.png" />):
+    <span class="skw">click</span>(<img src="OK.png" />)
+
+<span class="skw">click</span>(<img src="OK.png" />)
+</pre>
+</body>
+</html>

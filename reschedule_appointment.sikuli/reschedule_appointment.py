@@ -8,8 +8,8 @@ days = {"monday":"Monday.png",
         "sunday":Pattern("Sunday.png").similar(0.74) }
 
 #build script will change this
-day = days["saturday"]
-rday = days["sunday"]
+day = days["tuesday"]
+rday = days["wednesday"]
 
 d = find(day)
 #print d.getX()
@@ -37,6 +37,8 @@ for i in range(6):
 
 click("ok.png")
 
+sleep(5)
+
 wait("Anewannninfm.png", 10)
 
 click("OK-1.png")
@@ -49,4 +51,4 @@ et = find(Pattern("1pm.png").similar(0.77))
 
 r = Region(d.getX() -20, st.getY() - 10, 200, 30)
 
-l = r.find(Pattern("appointment_corner.png").similar(0.79))
+l = r.find(Pattern("appointment_corner.png").similar(0.78))
