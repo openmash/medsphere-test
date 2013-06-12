@@ -1,4 +1,21 @@
-rightClick(Pattern("1370982601051.png").similar(0.94).targetOffset(0,6))
+
+days = {"monday":"Monday.png", 
+        "tuesday": Pattern("Tuesday.png").similar(0.82), 
+        "wednesday": "Wednesday.png", 
+        "thursday":Pattern("thursday.png").similar(0.48), 
+        "friday":"Friday.png", 
+        "saturday":"Saturday.png", 
+        "sunday":Pattern("Sunday.png").similar(0.74) }
+
+#build script will change this
+day = days["monday"]
+
+d = find(day)
+#print d.getX()
+st = find(Pattern("9am.png").similar(0.75))
+
+l = Location(d.getX(), st.getY() + 5)
+rightClick(l)
 
 type(Key.DOWN)
 type(Key.ENTER)

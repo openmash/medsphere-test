@@ -90,9 +90,18 @@
 
 d = <span class="skw">find</span>(Pattern(<img src="1371012352800.png" />).similar(<span class="dig">0.91</span>).targetOffset(-<span class="dig">12</span>,<span class="dig">1</span>))
 <span class="cmt">#print d.getX()
-</span>st = <span class="skw">find</span>(Pattern(<img src="9am.png" />).similar(<span class="dig">0.75</span>))
+</span>st = <span class="skw">find</span>(Pattern(<img src="1371012595962.png" />).similar(<span class="dig">0.74</span>).targetOffset(-<span class="dig">1</span>,<span class="dig">0</span>))
 
-et = <span class="skw">find</span>(Pattern(<img src="1pm.png" />).similar(<span class="dig">0.77</span>))
+r = Region(d.getX() -<span class="dig">20</span>, st.getY() - <span class="dig">10</span>,<span class="dig">200</span>,<span class="dig">280</span>)
+
+l = r.<span class="skw">find</span>(<img src="1371014028315.png" />)
+
+<span class="skw">rightClick</span>(Location(l.getX()-<span class="dig">50</span>, l.getY()+<span class="dig">15</span>))
+
+<span class="kw">for</span> i <span class="kw">in</span> range(<span class="dig">4</span>):
+    <span class="skw">type</span>(Key.DOWN)
+
+<span class="skw">type</span>(Key.ENTER)
 </pre>
 </body>
 </html>

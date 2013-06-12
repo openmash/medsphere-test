@@ -18,12 +18,18 @@ find(Pattern("day_week.png").similar(0.63).targetOffset(1,0))
 
 d = find(Pattern("1371012352800.png").similar(0.91).targetOffset(-12,1))
 #print d.getX()
-st = find(Pattern("9am.png").similar(0.75))
+st = find(Pattern("1371012595962.png").similar(0.74).targetOffset(-1,0))
 
-et = find(Pattern("1pm.png").similar(0.77))
+r = Region(d.getX() -20, st.getY() - 10,200,280)
 
+l = r.find("1371014028315.png")
 
+rightClick(Location(l.getX()-50, l.getY()+15))
 
+for i in range(4):
+    type(Key.DOWN)
+
+type(Key.ENTER)
 
 
 

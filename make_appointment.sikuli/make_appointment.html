@@ -70,7 +70,23 @@
 <h2>make_appointment.sikuli\make_appointment.sikuli</h2> <a href="make_appointment.sikuli\make_appointment.zip">(Download this script)</a>
 </div>
 <pre class="sikuli-code">
-<span class="skw">rightClick</span>(Pattern(<img src="1370982601051.png" />).similar(<span class="dig">0.94</span>).targetOffset(<span class="dig">0</span>,<span class="dig">6</span>))
+days = {<span class="str">"monday"</span>:<img src="Monday.png" />,
+        <span class="str">"tuesday"</span>: Pattern(<img src="Tuesday.png" />).similar(<span class="dig">0.82</span>),
+        <span class="str">"wednesday"</span>: <img src="Wednesday.png" />,
+        <span class="str">"thursday"</span>:Pattern(<img src="thursday.png" />).similar(<span class="dig">0.48</span>),
+        <span class="str">"friday"</span>:<img src="Friday.png" />,
+        <span class="str">"saturday"</span>:<img src="Saturday.png" />,
+        <span class="str">"sunday"</span>:Pattern(<img src="Sunday.png" />).similar(<span class="dig">0.74</span>) }
+
+<span class="cmt">#build script will change this
+</span>day = days[<span class="str">"monday"</span>]
+
+d = <span class="skw">find</span>(day)
+<span class="cmt">#print d.getX()
+</span>st = <span class="skw">find</span>(Pattern(<img src="9am.png" />).similar(<span class="dig">0.75</span>))
+
+l = Location(d.getX(), st.getY() + <span class="dig">5</span>)
+<span class="skw">rightClick</span>(l)
 
 <span class="skw">type</span>(Key.DOWN)
 <span class="skw">type</span>(Key.ENTER)
