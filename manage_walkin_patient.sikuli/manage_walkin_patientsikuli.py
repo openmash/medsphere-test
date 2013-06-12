@@ -8,7 +8,21 @@ type(Key.DOWN)
 
 type(Key.ENTER)
 
-find("1370981821621-1.png")
+doubleClick("1370982387429.png")
+
+click(Pattern("1370380451375.png").similar(0.52))
+
+click("open.png")
+
+find(Pattern("day_week.png").similar(0.63).targetOffset(1,0))
+
+d = find()
+#print d.getX()
+st = find(Pattern("9am.png").similar(0.75))
+
+et = find(Pattern("1pm.png").similar(0.77))
+
+
 
 
 
