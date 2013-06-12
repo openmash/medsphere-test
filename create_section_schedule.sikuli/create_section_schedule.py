@@ -36,9 +36,10 @@ for day in days:
     
     click(Pattern("1370389069947.png").similar(0.49))
 
-x = findAll("1370980734032.png")
-
-print x
+fa = findAll("slots260minutes.png")
+fal = list(fa)
+if len(fal) < 7:
+    raise Exception('Failed to find 7 sections')
 
 
 

@@ -16,7 +16,7 @@ click("open.png")
 
 find(Pattern("day_week.png").similar(0.63).targetOffset(1,0))
 
-d = find()
+d = find(Pattern("1371012352800.png").similar(0.91).targetOffset(-12,1))
 #print d.getX()
 st = find(Pattern("9am.png").similar(0.75))
 

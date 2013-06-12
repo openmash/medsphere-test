@@ -108,9 +108,10 @@ days = [<img src="Monday.png" />, Pattern(<img src="Tuesday.png" />).similar(<sp
 
     <span class="skw">click</span>(Pattern(<img src="1370389069947.png" />).similar(<span class="dig">0.49</span>))
 
-x = findAll(<img src="1370980734032.png" />)
-
-<span class="kw">print</span> x
+fa = findAll(<img src="slots260minutes.png" />)
+fal = list(fa)
+<span class="kw">if</span> len(fal) &lt; <span class="dig">7</span>:
+    <span class="kw">raise</span> Exception(<span class="str">'Failed to find 7 sections'</span>)
 </pre>
 </body>
 </html>
