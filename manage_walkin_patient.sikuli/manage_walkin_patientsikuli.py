@@ -14,22 +14,34 @@ click(Pattern("1370380451375.png").similar(0.52))
 
 click("open.png")
 
-find(Pattern("day_week.png").similar(0.63).targetOffset(1,0))
+#find(Pattern("day_week.png").similar(0.63).targetOffset(46,0))
 
-d = find(Pattern("1371012352800.png").similar(0.91).targetOffset(-12,1))
+days = {"monday":"Monday.png", 
+        "tuesday": Pattern("Tuesday.png").similar(0.83), 
+        "wednesday":"Wednesday.png", 
+        "thursday":Pattern("thursday.png").similar(0.48), 
+        "friday":"Friday.png", 
+        "saturday":"Saturday.png", 
+        "sunday":Pattern("Sunday.png").similar(0.74) }
+
+day = days["wednesday"]
+
+d = find(day)
+
 #print d.getX()
-st = find(Pattern("1371012595962.png").similar(0.74).targetOffset(-1,0))
+st = find(Pattern("1371012595962.png").similar(0.88))
 
-r = Region(d.getX() -20, st.getY() - 10,200,280)
+l = Location(d.getX(), st.getY() + 5)
+rightClick(l)
 
-l = r.find("1371014028315.png")
-
-rightClick(Location(l.getX()-50, l.getY()+15))
-
-for i in range(4):
-    type(Key.DOWN)
-
+type(Key.DOWN)
+type(Key.DOWN)
 type(Key.ENTER)
+
+click("1371045409184.png")
+click("1371045481968.png")
+type(Key.ENTER)
+
 
 
 

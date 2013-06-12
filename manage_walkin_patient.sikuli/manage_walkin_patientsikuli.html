@@ -86,21 +86,32 @@
 
 <span class="skw">click</span>(<img src="open.png" />)
 
-<span class="skw">find</span>(Pattern(<img src="day_week.png" />).similar(<span class="dig">0.63</span>).targetOffset(<span class="dig">1</span>,<span class="dig">0</span>))
+<span class="cmt">#find(Pattern("day_week.png").similar(0.63).targetOffset(46,0))
+</span>
+days = {<span class="str">"monday"</span>:<img src="Monday.png" />,
+        <span class="str">"tuesday"</span>: Pattern(<img src="Tuesday.png" />).similar(<span class="dig">0.83</span>),
+        <span class="str">"wednesday"</span>:<img src="Wednesday.png" />,
+        <span class="str">"thursday"</span>:Pattern(<img src="thursday.png" />).similar(<span class="dig">0.48</span>),
+        <span class="str">"friday"</span>:<img src="Friday.png" />,
+        <span class="str">"saturday"</span>:<img src="Saturday.png" />,
+        <span class="str">"sunday"</span>:Pattern(<img src="Sunday.png" />).similar(<span class="dig">0.74</span>) }
 
-d = <span class="skw">find</span>(Pattern(<img src="1371012352800.png" />).similar(<span class="dig">0.91</span>).targetOffset(-<span class="dig">12</span>,<span class="dig">1</span>))
+day = days[<span class="str">"wednesday"</span>]
+
+d = <span class="skw">find</span>(day)
+
 <span class="cmt">#print d.getX()
-</span>st = <span class="skw">find</span>(Pattern(<img src="1371012595962.png" />).similar(<span class="dig">0.74</span>).targetOffset(-<span class="dig">1</span>,<span class="dig">0</span>))
+</span>st = <span class="skw">find</span>(Pattern(<img src="1371012595962.png" />).similar(<span class="dig">0.88</span>))
 
-r = Region(d.getX() -<span class="dig">20</span>, st.getY() - <span class="dig">10</span>,<span class="dig">200</span>,<span class="dig">280</span>)
+l = Location(d.getX(), st.getY() + <span class="dig">5</span>)
+<span class="skw">rightClick</span>(l)
 
-l = r.<span class="skw">find</span>(<img src="1371014028315.png" />)
+<span class="skw">type</span>(Key.DOWN)
+<span class="skw">type</span>(Key.DOWN)
+<span class="skw">type</span>(Key.ENTER)
 
-<span class="skw">rightClick</span>(Location(l.getX()-<span class="dig">50</span>, l.getY()+<span class="dig">15</span>))
-
-<span class="kw">for</span> i <span class="kw">in</span> range(<span class="dig">4</span>):
-    <span class="skw">type</span>(Key.DOWN)
-
+<span class="skw">click</span>(<img src="1371045409184.png" />)
+<span class="skw">click</span>(<img src="1371045481968.png" />)
 <span class="skw">type</span>(Key.ENTER)
 </pre>
 </body>
