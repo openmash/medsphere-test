@@ -93,9 +93,17 @@ l = Location(d.getX() + <span class="dig">5</span>, st.getY() + <span class="dig
 <span class="skw">type</span>(Key.ENTER)
 
 <span class="kw">if</span> exists(<img src="question.png" />):
+    <span class="kw">print</span> <span class="str">'promted for overbook'</span>
     <span class="skw">click</span>(<img src="OK.png" />)
 
-<span class="skw">click</span>(<img src="OK.png" />)
+<span class="skw">sleep</span>(<span class="dig">1</span>)
+
+<span class="skw">click</span>(<img src="OK-1.png" />)
+
+<span class="kw">if</span> exists(<img src="1371072628925.png" />):
+    <span class="skw">type</span>(Key.ENTER)
+    <span class="skw">click</span>(<img src="Cancel.png" />)
+    <span class="kw">raise</span> Exception(<span class="str">'Cannot create walk-in appointment'</span>)
 </pre>
 </body>
 </html>

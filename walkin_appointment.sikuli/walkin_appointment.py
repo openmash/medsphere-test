@@ -22,8 +22,15 @@ type(Key.DOWN)
 type(Key.ENTER)
 
 if exists("question.png"):
+    print 'promted for overbook'
     click("OK.png")
 
-click("OK.png")
+sleep(1)
 
+click("OK-1.png")
+
+if exists("1371072628925.png"):
+    type(Key.ENTER) 
+    click("Cancel.png")
+    raise Exception('Cannot create walk-in appointment')
 
