@@ -7,8 +7,10 @@ days = {"monday":"Monday.png",
         "saturday":"Saturday.png", 
         "sunday":Pattern("Sunday.png").similar(0.74) }
 
-day = days["wednesday"]
-
+if "${WALKIN_APPOINTMENT_DAY}" in days:
+    day = days["${WALKIN_APPOINTMENT_DAY}"]
+else:
+    day = days["wednesday"]
 d = find(day)
 
 #print d.getX()

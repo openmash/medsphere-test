@@ -7,8 +7,10 @@ days = {"monday":"Monday.png",
         "saturday":"Saturday.png", 
         "sunday":Pattern("Sunday.png").similar(0.74) }
 
-#build script will change this
-day = days["monday"]
+if "${MAKE_APPOINTMENT_DAY}" in days:
+    day = days["${MAKE_APPOINTMENT_DAY}"]
+else:
+    day = days["monday"]
 
 d = find(day)
 #print d.getX()

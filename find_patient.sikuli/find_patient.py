@@ -1,6 +1,6 @@
 doubleClick(Pattern("1370537456805.png").targetOffset(38,0))
 
-type(Pattern("1370537456805.png").targetOffset(38,0), 's')
+type(Pattern("1370537456805.png").targetOffset(38,0), '${PATIENT_SEARCH}')
 
 sleep(5) #let the search find it
 

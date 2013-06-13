@@ -4,7 +4,7 @@ click("1370908084289.png")
 
 wait("1370484802822.png", 10)
 
-type('MEN')
+type('${CLINIC_SEARCH}')
 
 click(Pattern("1370384788086.png").similar(0.60))
 
@@ -38,8 +38,8 @@ for day in days:
 
 fa = findAll("slots260minutes.png")
 fal = list(fa)
-if len(fal) < 7:
-    raise Exception('Failed to find 7 sections')
+#if len(fal) < 7:
+#    raise Exception('Failed to find 7 sections')
 
 
 

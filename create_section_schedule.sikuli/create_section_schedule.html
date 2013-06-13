@@ -76,7 +76,7 @@
 
 <span class="skw">wait</span>(<img src="1370484802822.png" />, <span class="dig">10</span>)
 
-<span class="skw">type</span>(<span class="str">'MEN'</span>)
+<span class="skw">type</span>(<span class="str">'${CLINIC_SEARCH}'</span>)
 
 <span class="skw">click</span>(Pattern(<img src="1370384788086.png" />).similar(<span class="dig">0.60</span>))
 
@@ -110,8 +110,8 @@ days = [<img src="Monday.png" />, Pattern(<img src="Tuesday.png" />).similar(<sp
 
 fa = findAll(<img src="slots260minutes.png" />)
 fal = list(fa)
-<span class="kw">if</span> len(fal) &lt; <span class="dig">7</span>:
-    <span class="kw">raise</span> Exception(<span class="str">'Failed to find 7 sections'</span>)
+<span class="cmt">#if len(fal) &lt; 7:
+</span><span class="cmt">#    raise Exception('Failed to find 7 sections')</span>
 </pre>
 </body>
 </html>
