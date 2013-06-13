@@ -1,8 +1,10 @@
-doubleClick("1370982387429.png")
+doubleClick(Pattern("1370982387429.png").similar(0.82))
 
-click(Pattern("1370380451375.png").similar(0.52))
+click("SelectaClinic.png")
 
-click("open.png")
+
+
+click(Pattern("open.png").similar(0.74))
 
 find(Pattern("day_week.png").similar(0.63))
 

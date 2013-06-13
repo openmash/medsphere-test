@@ -70,11 +70,13 @@
 <h2>select_clinic.sikuli\select_clinic.sikuli</h2> <a href="select_clinic.sikuli\select_clinic.zip">(Download this script)</a>
 </div>
 <pre class="sikuli-code">
-<span class="skw">doubleClick</span>(<img src="1370982387429.png" />)
+<span class="skw">doubleClick</span>(Pattern(<img src="1370982387429.png" />).similar(<span class="dig">0.82</span>))
 
-<span class="skw">click</span>(Pattern(<img src="1370380451375.png" />).similar(<span class="dig">0.52</span>))
+<span class="skw">click</span>(<img src="SelectaClinic.png" />)
 
-<span class="skw">click</span>(<img src="open.png" />)
+
+
+<span class="skw">click</span>(Pattern(<img src="open.png" />).similar(<span class="dig">0.74</span>))
 
 <span class="skw">find</span>(Pattern(<img src="day_week.png" />).similar(<span class="dig">0.63</span>))
 </pre>
